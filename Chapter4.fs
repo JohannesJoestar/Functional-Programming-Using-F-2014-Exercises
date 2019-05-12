@@ -1,4 +1,7 @@
-open System
+// 4.1
+let rec upto = function
+| 0 -> []
+| n -> (upto (n - 1)) @ [n]
 
 // 4.10
 let prefix (a: int list) (b: int list) = 
