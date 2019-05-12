@@ -36,7 +36,10 @@ let prime number =
     | i -> (i > (number / 2)) || ((number % i <> 0) && (check number (i + 1)))
 
     check number 2
-//
+// 3
+let rec nextPrime = function
+| number when (prime (number + 1)) -> (number + 1)
+| number -> nextPrime (number + 1)
 
 
 // 2.11
