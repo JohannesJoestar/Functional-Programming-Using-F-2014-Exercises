@@ -23,10 +23,21 @@ let notDivisible2 = function
 | (d, n) -> (n % d <> 0);;
 
 // 2.7
+// 1
 let rec test = function
 | (a, b, _) when (a > b) -> true
 | (a, b, c) -> 
     notDivisible (a, c) && test ((a + 1), b, c)
+// 2
+let prime number =
+    
+    // Auxiliary recursive
+    let rec check number = function
+    | i -> (i > (number / 2)) || ((number % i <> 0) && (check number (i + 1)))
+
+    check number 2
+//
+
 
 // 2.11
 let VAT n x = x + ((x * n) / 100);;
