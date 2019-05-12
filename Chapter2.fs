@@ -22,7 +22,7 @@ let notDivisible2 = function
 | (d, n) when (d < 0 || n < 0) -> true
 | (d, n) -> (n % d <> 0);;
 
-// 2.7
+//// 2.7
 // 1
 let rec test = function
 | (a, b, _) when (a > b) -> true
@@ -41,6 +41,11 @@ let rec nextPrime = function
 | number when (prime (number + 1)) -> (number + 1)
 | number -> nextPrime (number + 1)
 
+//// 2.8
+// Auxiliary: factorial
+let rec bin (n, k) = 
+    if k = 0 || n = k then 1
+    else bin(n-1, k-1) + bin(n-1, k)
 
 // 2.11
 let VAT n x = x + ((x * n) / 100);;
