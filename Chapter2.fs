@@ -50,3 +50,13 @@ let rec bin (n, k) =
 // 2.11
 let VAT n x = x + ((x * n) / 100);;
 let unVAT n x = x / ((100 + n)/ 100);;
+
+// 2.12
+let min check = 
+
+    // Auxiliary: recursive count
+    let rec recursive = function
+    | n when ((check n) = 0) -> n
+    | n -> recursive (n + 1)
+
+    recursive 1;;
