@@ -28,6 +28,12 @@ let rec rmeven = function
 | h::t when (h % 2 <> 0) -> h :: (rmeven t)
 | _::t -> (rmeven t)
 
+// 4.7
+let rec multiplicity x = function
+| [] -> 0
+| h::t when (h = x) ->
+    (multiplicity x t) + 1
+
 // 4.10
 let prefix (a: int list) (b: int list) = 
     if (a.Length > b.Length) then false else
