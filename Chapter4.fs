@@ -14,6 +14,14 @@ let rec evenN = function
 | n when (n % 2 = 0) -> (evenN (n - 1)) @ [n]
 | n -> (evenN (n - 1)) 
 
+// 4.4
+
+// 4.5
+let rec rmodd = function
+| [] -> []
+| h::t when (h % 2 = 0) -> h :: (rmodd t)
+| _::t -> (rmodd t)
+
 // 4.10
 let prefix (a: int list) (b: int list) = 
     if (a.Length > b.Length) then false else
