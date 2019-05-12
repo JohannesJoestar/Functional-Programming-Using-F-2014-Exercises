@@ -60,3 +60,7 @@ let min check =
     | n -> recursive (n + 1)
 
     recursive 1;;
+
+// 2.13
+let curry f a b = f (a, b)
+let uncurry f (a, b) = f a b
