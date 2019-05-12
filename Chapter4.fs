@@ -31,8 +31,8 @@ let rec rmeven = function
 // 4.7
 let rec multiplicity x = function
 | [] -> 0
-| h::t when (h = x) ->
-    (multiplicity x t) + 1
+| h::t -> 
+    (multiplicity x t) + if (h = x) then 1 else 0
 
 // 4.10
 let prefix (a: int list) (b: int list) = 
