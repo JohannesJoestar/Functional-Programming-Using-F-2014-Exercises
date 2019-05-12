@@ -22,6 +22,12 @@ let notDivisible2 = function
 | (d, n) when (d < 0 || n < 0) -> true
 | (d, n) -> (n % d <> 0);;
 
+// 2.7
+let rec test = function
+| (a, b, _) when (a > b) -> true
+| (a, b, c) -> 
+    notDivisible (a, c) && test ((a + 1), b, c)
+
 // 2.11
 let VAT n x = x + ((x * n) / 100);;
 let unVAT n x = x / ((100 + n)/ 100);;
