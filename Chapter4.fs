@@ -22,6 +22,12 @@ let rec rmodd = function
 | h::t when (h % 2 = 0) -> h :: (rmodd t)
 | _::t -> (rmodd t)
 
+// 4.6
+let rec rmeven = function
+| [] -> []
+| h::t when (h % 2 <> 0) -> h :: (rmeven t)
+| _::t -> (rmeven t)
+
 // 4.10
 let prefix (a: int list) (b: int list) = 
     if (a.Length > b.Length) then false else
