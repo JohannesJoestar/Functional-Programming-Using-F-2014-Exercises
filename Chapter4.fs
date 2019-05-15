@@ -50,3 +50,18 @@ let rec sum p = function
             | true -> h
             | false -> 0) + (sum p t)
 
+// 4.15
+let rec revrev =
+
+    // Helper: reverse
+    let rec reverse = function
+    | []   -> []
+    | h::t -> (reverse t) @ [h]
+
+    // Helper: nested reverse
+    let rec auxiliary = function
+    | []   -> []
+    | h::t -> (auxiliary t) @ [reverse h]
+
+    function | l -> auxiliary l
+
