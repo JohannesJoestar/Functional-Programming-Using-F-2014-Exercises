@@ -45,6 +45,8 @@ let prefix (a: int list) (b: int list) =
 
 // 4.12
 let rec sum p = function
-| [] -> []
-| h::t -> if (p h) then (h :: (sum p t)) else (sum p t)
+| [] -> 0
+| h::t -> (match (p h) with
+            | true -> h
+            | false -> 0) + (sum p t)
 
