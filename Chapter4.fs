@@ -43,3 +43,8 @@ let prefix (a: int list) (b: int list) =
             | (_, _) -> false
         traverse(a, b);;
 
+// 4.12
+let rec sum p = function
+| [] -> []
+| h::t -> if (p h) then (h :: (sum p t)) else (sum p t)
+
